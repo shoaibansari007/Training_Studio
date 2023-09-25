@@ -3,22 +3,38 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "poppins";
+    user-select: none;
+    scroll-behavior: smooth;
+    font-size: 2.4vh;
+}
+::placeholder{
+    font-size: 0.9vw;
 }
 :root{
     --orange-clr:#ed563b;
     --white-clr:#ffffffe6;
 }
+span{
+    color: var(--orange-clr);
+    font-size: 1em;
+}
 body{
     width: 100%;
+    height: 100vh;
+}
+.section-head{
+    margin-bottom: 5px;
 }
 section{
     width: 100%;
     padding: 0 50px;
 }
+.check,
+label[for="check"] i{
+    display: none;
+}
 .home-section{
     position: relative;
-    background: rgba(0,0,0,0.7);
-    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -28,6 +44,9 @@ section{
 .home-section .background-video{
     position: absolute;
     z-index: -1;
+    overflow: hidden;
+    filter: brightness(20%);
+    background-size: cover;
 }
 .home-section nav{
     width: 100%;
@@ -38,24 +57,22 @@ section{
     justify-content: space-between;
     align-items: center;
     flex-shrink: 1;
-    padding: 0px 100px;
+    padding: 0px 15vh;
     font-weight: 600;
     text-transform: uppercase;
-    position: absolute;
+    position: absolute ;
 }
 .home-section nav h3{
-    font-size: 1.6rem;
+    font-size:  3vw;
     color: var(--white-clr);
 }
-span{
-    color: var(--orange-clr);
-}
+
 .home-section nav .nav-ul ul,
 .home-section nav .nav-ul{
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    font-size: 0.8rem;
+    font-size: 1vw;
     align-items: center;
 }
 .home-section nav .nav-ul a,
@@ -83,7 +100,7 @@ span{
     background: var(--orange-clr);
 }
 .quote-box{
-    height: 100%;
+    margin: 20% auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,11 +108,8 @@ span{
     color:var(--white-clr) ;
     text-transform: uppercase;
 }
-.quote-box h3{
-    font-size: 1.6rem !important ;
-}
 .home-section .quote-box h1{
-    font-size: 4.6rem;
+    font-size: 6vw;
 }
 /* --------------------------------------------------------- */
 /* -----------------------programs-section------------------ */
@@ -114,7 +128,7 @@ span{
 .section-container .section-head h1{
     margin: 20px 0;
     text-transform: uppercase;
-    font-size: 1.6rem;
+    font-size: 2vw;
 }
 .section-container .section-head .head-icon {
     margin: 20px 0;
@@ -131,8 +145,10 @@ span{
     display: grid;
     grid-template-columns: 1fr 3fr;
     text-align: start;
-    font-size: 0.8rem;
     margin: 20px;
+}
+.section-container .pro-options .options .option-details h3{
+    text-transform: uppercase;
 }
 .section-container .pro-options .options .option-details h3,
 .section-container .pro-options .options .option-details p{
@@ -154,7 +170,7 @@ span{
     color: var(--white-clr);
 }
 .quote-box h3{
-    font-size: 2rem;
+    font-size: 2vw;
     margin: 20px;
 }
 /* --------------------------------------------------------- */
@@ -171,8 +187,8 @@ span{
 }
 .data-block-left-right{
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat( 5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     width: 100%;
     padding: 40px;
     gap: 20px;
@@ -224,9 +240,10 @@ span{
 }
 .data-block-left-right .right-data{
     padding: 0 20px;
-   grid-column: 2;
+   grid-column: 2/5;
    grid-row: 1/6;
-   display: grid;
+   display: flex;
+   flex-direction: column;
    gap: 10px;
 }
 .left-data > a,
@@ -291,7 +308,7 @@ table{
     text-transform: uppercase;
 }
 .trainers-box .trainer p{
-    font-size: 0.8rem;
+    font-size: 12px;
 }
 /* --------------------------------------------------------- */
 /* ---------------------form-section---------------------- */
@@ -301,7 +318,6 @@ table{
     padding: 0;
     display: flex;
     flex-direction: row;
-    height: 450px;
 }
 #form-section .map-box{
     width: 50%;
@@ -311,10 +327,12 @@ table{
     background: url(images/contact-bg.jpg) no-repeat center;
     background-size: cover;
     padding: 50px;
+    display: grid;
+    place-items: center;
 }
 #form-section .contact-form .form{
     border-radius: 10px;
-    background: hwb(0 100% 0%);
+    background: #ffffff;
     padding: 20px;
 }
 iframe{
@@ -357,6 +375,7 @@ input[type="submit"]{
     border: none;
     color: var(--white-clr);
     border-radius: 5px;
+    float: right;
 }
 input[type="submit"]:hover{
     background: #f57058 ;
@@ -366,8 +385,515 @@ input[type="submit"]:hover{
 /* --------------------------------------------------------- */
 footer{
     text-align: center;
-    padding: 20px;
+    padding: 16px;
 }
 footer p{
-font-size: 0.7rem;
+font-size: 10px;
+}
+/* --------------------------------------------------------- 
+------------------------------------------------------------
+----------    CSS FOR DIFFERENT SCREEN WIDTH   -------------
+------------------------------------------------------------
+--------------------------------------------------------- */
+
+/* --------------------------------------------------------- 
+----------  SCREEN WIDTH ------- MAX - 2560px  -------------
+--------------------------------------------------------- */
+
+@media  screen and (max-width:2560px) {
+    .home-section .background-video{
+        width: 100%;
+    }
+    .section-head{
+        margin-bottom: 5px;
+    }
+    .home-section nav{
+        height: 130px;
+    }
+    .home-section nav h3{
+        font-size: 2vw;
+    }
+    .pro-options{
+        margin: 4vw;
+    }
+    .options img{
+        width: 80%;
+    }
+    #quote-section .quote-box{
+        margin: 4% auto;
+    }
+    .data-block-left-right .box{
+        font-size: 10vw !important;
+        padding: 10px;
+    }
+    .right-data a{
+        width: 300px;
+    }
+    .box{
+        display: flex;
+        align-items: center;
+    }
+    .box img{
+        width: 80px;
+    }
+    .box-5{
+        height: 110px !important;
+    }
+    .trainers-box .trainer p{
+        font-size: 0.8em;
+    }
+}
+/* --------------------------------------------------------- 
+----------  SCREEN WIDTH ------- MAX - 1440px  -------------
+--------------------------------------------------------- */
+@media  screen and (max-width:1440px) {
+    *{
+        font-size: 1.2vw;
+    }
+    .section-head{
+        margin-bottom: 5px;
+    }
+    .home-section nav{
+        height: 100px;
+    }
+    .home-section nav{
+        padding: 0 10%;
+    }
+    .home-section nav .nav-ul a{
+        margin: 6px;
+        padding: 6px;
+    }
+    .right-data > a{
+        margin: 0;
+        width: 170px;
+    }
+    .section-container {
+        padding: 10px 80px;
+    }
+    .section-container .pro-options .options .option-details h3, .section-container .pro-options .options .option-details p {
+        margin-bottom: 5px;
+    }
+    .section-container .pro-options .options{
+        padding: 10px;
+    }
+    .data-block-left-right{
+        padding: 0 160px;
+        margin-bottom: 50px;
+    }
+    .box{
+        width: 20vw;
+    }
+    .box-5{
+        height: 60px !important;
+    }
+    .box img {
+        width: 40px;
+    }
+    td{
+        padding: 20px;
+    }
+    table{
+        margin-top: 10px;
+    }
+    #form-section .contact-form{
+        padding: 90px 50px;
+    }
+}
+/* --------------------------------------------------------- 
+----------  SCREEN WIDTH ------- MAX - 1024px  -------------
+--------------------------------------------------------- */
+@media  screen and (max-width: 1024px){
+    .home-section nav{
+        height: 70px;
+    }
+    .section-head{
+        margin-bottom: 5px;
+    }
+    .pro-options {
+        margin: 0;
+    }
+    .section-container{
+        padding: 0 40px;
+    }
+    .box{
+        width: 250px;
+    }
+    .box img{
+        width: 40px;
+    }
+    .data-block-left-right{
+        padding-top: 0;
+    }
+    .data-block-left-right .box-5{
+        height: 70px !important;
+    }
+    .data-block-left-right .right-data{
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;    
+    }
+    .right-data > a{
+        width: 150px;
+        height: 50px;
+    }
+    td{
+        padding: 20px 15px;
+    }
+    .schedule-section-container .schedule-table{
+        margin: 5px auto;
+    }
+    .trainers-box{
+        margin: 0 auto;
+    }
+    .trainers-box .trainer{
+        width: 30%;
+    }
+    
+}
+/* --------------------------------------------------------- 
+----------  SCREEN WIDTH ------- MAX - 930px  -------------
+--------------------------------------------------------- */
+@media  screen and (max-width: 930px){
+.quote-box{
+    width: 80%;
+}
+.section-container .section-head {
+    margin: 5px auto;
+}
+#programs-section .section-container .pro-options .options{
+    margin: 20px;
+}
+.section-container .pro-options{
+    margin: 20px auto;
+}
+.section-container .pro-options .options .option-details h3,
+.section-container .pro-options .options .option-details p{
+    margin-bottom: 0;
+}
+.section-container .pro-options .options .option-details{
+    font-size: 1.2vh;
+}
+.section-container .section-head{
+    width: 80%;
+}
+.box{
+    width: 190px;
+}
+.data-block-left-right{
+    gap: 10px;
+    padding: 0 65px;
+}
+.data-block-left-right .box a p {
+    margin: 0;
+    margin-left: 15px;
+}
+.data-block-left-right .box img{
+    width: 30px;
+}
+.data-block-left-right .box-5 {
+    height: 48px !important;
+}
+.right-data > a {
+    width: 15vw;
+    height: 38px;
+}
+#form-section .contact-form{
+    padding: 50px;
+}
+}
+/* --------------------------------------------------------- 
+----------  SCREEN WIDTH ------- MAX - 768px  -------------
+--------------------------------------------------------- */
+
+@media  screen and (max-width: 768px){
+    .home-section nav {
+        height: 50px;
+    }
+    td{
+        padding: 10px;
+    }
+    #schedule-section .schedule-section-container .schedule-table{
+        margin-top: 10px;
+    }
+    #trainer-section .section-container{
+        padding: 10px 50px;
+    }
+    #form-section .contact-form{
+        padding: 20px;
+    }
+    .home-section nav .nav-ul a, .quote-box a, .left-data > a, .right-data > a{
+        margin: 10px;
+        padding: 10px;
+    }
+}
+/*-------------------------------------------------------- 
+----------  SCREEN WIDTH ------- MAX - 425px  -------------
+--------------------------------------------------------- */
+@media  screen and (max-width: 426px){
+    *{
+        font-size: 2vw;
+    }
+    section{
+        padding: 0 20px;
+    }
+    .home-section nav{
+        position: fixed;
+        background: #fff !important;
+
+    }
+    label[for="check"] i{
+        display: block;
+        color: var(--orange-clr);
+        float: left;
+    }
+    #check:checked ~ label[for="check"] i{
+        color: rgba(35, 35, 35, 0.8) !important;
+    }
+    .home-section nav {
+        height: 40px;
+        box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+    }
+    .home-section nav h3{
+        margin: 0 auto;
+        font-size: 2.6em;
+    }
+    .home-section nav .nav-ul ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .home-section nav .nav-ul{
+        position: absolute;
+        top: 41px;
+        left: -50%;
+        height: 100vh;
+        background: rgba(255, 255, 255,0.9);
+        font-size: 2.2vw;
+        width: 40%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        transition: all 0.5s;
+    }
+    .home-section nav .nav-ul > a{
+        order: -2;
+        font-size: 2.2vw;
+        justify-self:end;
+        color: #fff !important;
+        width: 100%;
+    }
+    .home-section nav .nav-ul ul{
+        align-items: flex-start;
+        width: 100%;
+    }
+    .home-section nav .nav-ul ul li:hover{
+        background-color: var(--orange-clr);
+    }
+    .home-section nav .nav-ul ul li a{
+    display: block;
+    margin: 0;
+    }
+    .home-section nav .nav-ul ul li{
+        width: 100%;
+        border-top: 1px solid #dcdbdb;
+    }
+    .home-section nav .nav-ul ul li a:visited,
+    .home-section nav .nav-ul ul li a:hover{
+        background: var(--orange-clr);
+    }
+    .home-section nav .nav-ul a{
+        font-size: 2.2vw;
+        color: #000;
+        font-weight: 600;
+        margin: unset;
+        text-align: left;
+    }
+    .home-section nav{
+        background: rgba(255, 255, 255,0.8);
+    }
+    .home-section nav h3{
+        color: #000;
+    }
+    .mobile-close-btn::before{
+        rotate: 45deg;
+    }
+    .mobile-close-btn::after{
+        rotate: 135deg;
+    }
+    #check:checked ~ .nav-ul{
+        left: 0;
+    }
+    .quote-box{
+        margin: 25% auto;
+    }
+    .quote-box a{
+        margin: 0px;
+        padding: 5px;
+    }
+    .home-section .quote-box h1 {
+        font-size: 5vw;
+    }
+    .quote-box h3,
+    #programs-section {
+        margin: 0px;
+    }
+    .section-container .section-head h1{
+        margin-bottom: 0;
+    }
+    .section-container .section-head .head-icon {
+        margin: 2px 0;
+    }
+    .section-container{
+        padding: 0 !important;
+    }
+    .head-icon img{
+        width: 20px;
+    }
+    .section-container .pro-options {
+        margin: 0px auto;
+    }
+    #programs-section .section-container .pro-options{
+        display:block;
+    }
+    #programs-section .section-container .pro-options .options {
+        margin: 3px 0;
+    }
+    #quote-section .quote-box p{
+        font-size: 2.2vw;
+        margin: 5px auto;
+    }
+    .data-block-left-right{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 20px 0;
+    }
+    .data-block-left-right .box{
+        display: block;
+        width: 100%;
+    }
+    .data-block-left-right .box-1{
+        order: 0;
+    }
+    .data-block-left-right .right-data{
+        padding: 0;
+        order: 1;
+        gap: 0;
+    }
+    .data-block-left-right .right-data a{
+        width: fit-content;
+        height:unset;
+        padding: 5px;
+        margin:0;
+        margin-top: 3px;
+    }
+    .data-block-left-right .box-2{
+        order: 2;
+    }
+    .data-block-left-right .box-3{
+        order: 4;
+    }
+    .data-block-left-right .box-4{
+        order: 6;
+    }
+    .data-block-left-right .box-5{
+        order: 8;
+        width: fit-content;
+        height: unset !important;
+    }
+    td {
+        padding: 10px 5px !important;
+        font-size: 1.8vw;
+    }
+    .trainers-box{
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .trainers-box  .trainer {
+        flex-wrap: nowrap;
+        flex-grow: 2;
+        min-width: 200px;
+        margin: 7px auto;
+    }
+    #form-section{
+        flex-direction: column;
+    }
+    #form-section .map-box, 
+    #form-section .contact-form{
+        width: 100%;
+    }
+    #form-section .map-box{
+        height: 300px;
+    }
+    .form input,
+    .form textarea{
+        padding: 5px;
+    }
+    ::placeholder{
+        font-size: 2vw;
+    }
+    .form textarea[placeholder="Subject"] {
+        max-height: 25px;
+        min-height: 25px;
+    }
+    .form textarea[placeholder="Message"] {
+        max-height: 80px;
+        min-height: 80px;
+    }
+}
+/*-------------------------------------------------------- 
+----------  SCREEN WIDTH ------- MAX - 425px  -------------
+--------------------------------------------------------- */
+@media  screen and (max-width: 425px){
+    *{
+        font-size: 2.7vw;
+    }
+    .home-section{
+        height: 65vh !important;
+    }
+    .home-section .background-video{
+        width: 270%;
+    }
+    .quote-box h3 {
+        font-size: 4vw;
+    }
+    .home-section .quote-box h1 {
+        font-size: 9vw;
+    }
+    .section-container .section-head h1 {
+        font-size: 5vw;
+    }
+    .quote-box h3 {
+        font-size: 7vw;
+        margin: 20px;
+    }
+    td{
+        font-size: 2.8vw;
+    }
+    .trainers-box .trainer {
+        min-width: 220px;
+    }
+    .trainers-box .trainer p {
+        font-size: 1.2em;
+    }
+    .form .input {
+        display: flex;
+        flex-direction: column;
+    }
+    .form input:nth-child(1), .form input:nth-child(2) {
+        width: 100%;
+    }
+    .form input, .form textarea {
+        margin-bottom: 5px;
+    }
+    footer {
+        padding: 2px;
+        background: #001c2a;
+    }
+    footer p{
+        color: rgba(255, 255, 255,0.5);
+        font-size: 7px;
+    }
+    
 }
