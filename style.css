@@ -60,7 +60,7 @@ label[for="check"] i {
   padding: 0px 15vh;
   font-weight: 600;
   text-transform: uppercase;
-  position: fixed;
+  position: absolute;
 }
 .home-section nav h3 {
   font-size: 3vw;
