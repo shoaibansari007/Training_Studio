@@ -50,7 +50,7 @@ label[for="check"] i {
 }
 .home-section nav {
   width: 100%;
-  height: 100px;
+  height: 60px;
   background: rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: row;
@@ -322,6 +322,7 @@ table {
 }
 #form-section .map-box {
   width: 50%;
+  z-index: -2;
 }
 #form-section .contact-form {
   width: 50%;
@@ -409,7 +410,7 @@ footer p {
     margin-bottom: 5px;
   }
   .home-section nav {
-    height: 130px;
+    height: 60px;
   }
   .home-section nav h3 {
     font-size: 2vw;
@@ -455,7 +456,7 @@ footer p {
     margin-bottom: 5px;
   }
   .home-section nav {
-    height: 100px;
+    height: 60px;
   }
   .home-section nav {
     padding: 0 10%;
@@ -828,6 +829,7 @@ footer p {
   }
   #form-section .map-box {
     height: 300px;
+    z-index: -2;
   }
   .form input,
   .form textarea {
@@ -899,5 +901,18 @@ footer p {
   footer p {
     color: rgba(255, 255, 255, 0.5);
     font-size: 7px;
+  }
+}
+/* Nav Fixed */
+.home-section .sticky {
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0 8px 6px -6px #00000066;
+  .nav-h,
+  .nav-ul li a {
+    color: #000;
+  }
+  .nav-ul li a:hover {
+    color: var(--orange-clr);
   }
 }
